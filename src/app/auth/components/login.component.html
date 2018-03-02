@@ -1,18 +1,18 @@
 <!-- TODO: Add ng specific directives/validation settings and add styling -->
 <form (ngSubmit)="doLogin(null)">
-  <div>
-    User name:
+  <section>
+    <label for="wed-auth-login-username">User name</label>:
     <div>
-      <input pattern=".{3,}" placeholder="User" type="text" name="login" />
+      <input pattern=".{3,}" placeholder="User" type="text" name="login" id="wed-auth-login-username">
       <div>Please specify your login, at least three characters.</div>
     </div>
-  </div>
-  <div>
-    Password:
+  </section>
+  <section>
+    <label for="wed-auth-login-password">Password</label>:
     <div>
-      <input pattern=".{3,}" placeholder="Password" type="password" name="password" />
+      <input pattern=".{3,}" placeholder="Password" type="password" name="password" id="wed-auth-login-password">
       <div>Please specify your login, at least three characters.</div>
     </div>
-  </div>
+  </section>
   <button>Login</button>
 </form>

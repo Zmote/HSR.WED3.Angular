@@ -1,37 +1,37 @@
 <!-- TODO: Add ng specific directives/validation settings and add styling -->
 <form (ngSubmit)="doRegister(null)">
   <div>
-    First name:
+    <label for="wed-auth-register-firstname">First name</label>:
     <div>
-      <input pattern=".{2,}" placeholder="First name" type="text" name="firstname" />
+      <input pattern=".{2,}" placeholder="First name" type="text" name="firstname" id="wed-auth-register-firstname">
       <div>Please specify your first name.</div>
     </div>
   </div>
   <div>
-    Last name:
+    <label for="wed-auth-register-lastname">Last name</label>:
     <div>
-      <input pattern=".{2,}" placeholder="Last name" type="text" name="lastname" />
+      <input pattern=".{2,}" placeholder="Last name" type="text" name="lastname" id="wed-auth-register-lastname">
       <div>Please specify your last name.</div>
     </div>
   </div>
   <div>
-    User name:
+    <label for="wed-auth-register-login">User name</label>:
     <div>
-      <input pattern=".{3,}" placeholder="User" type="text" name="login" />
+      <input pattern=".{3,}" placeholder="User" type="text" name="login" id="wed-auth-register-login">
       <div>Please specify your login, at least three characters.</div>
     </div>
   </div>
   <div>
-    Password:
+    <label for="wed-auth-register-lastname">Password</label>:
     <div>
-      <input pattern=".{3,}" placeholder="Password" type="password" name="password" />
+      <input pattern=".{3,}" placeholder="Password" type="password" name="password" id="wed-auth-register-password">
       <div>Please specify your password, at least three characters.</div>
     </div>
   </div>
   <div>
-    Confirm Password:
+    <label for="wed-auth-register-passwordConfirm">Confirm Password</label>:
     <div>
-      <input pattern=".{3,}" placeholder="Password" type="password" name="passwordConfirm" />
+      <input pattern=".{3,}" placeholder="Password" type="password" name="passwordConfirm" id="wed-auth-register-passwordConfirm">
       <div>Please confirm your password.</div>
     </div>
   </div>

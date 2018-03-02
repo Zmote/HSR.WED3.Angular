@@ -17,7 +17,7 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "wed",
       "styles": [
         "styles.scss"
       ],
@@ -55,6 +55,7 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "component": {}
+    "component": {},
+    "build": { "showCircularDependencies": false }
   }
 }

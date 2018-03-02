@@ -6,16 +6,19 @@ import {WelcomeRoutingModule} from './welcome-routing.module';
 import {WelcomeComponent} from './welcome.component';
 import {AuthModule} from '../auth/auth.module';
 
+const DECLARATIONS = [
+  WelcomeComponent
+];
+const EXPORTS = [
+  ...DECLARATIONS
+];
+
 @NgModule({
-  declarations: [
-    WelcomeComponent
-  ],
+  declarations: [ DECLARATIONS ],
   imports: [
     WelcomeRoutingModule, SharedModule, AuthModule
   ],
-  exports: [
-    WelcomeComponent
-  ],
+  exports: [ EXPORTS ],
   providers: [ ]
 })
 export class WelcomeModule {

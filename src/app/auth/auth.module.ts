@@ -9,20 +9,22 @@ import {LoginComponent, LogoutComponent,
   RegisterComponent} from './components';
 import {SharedModule} from '../shared/shared.module';
 
+const DECLARATIONS = [
+  LoginComponent, LogoutComponent, RegisterComponent
+  // TODO: Add declarations here, if additional components are placed within the Auth module
+];
+const EXPORTS = [
+  ...DECLARATIONS
+  // TODO: Add declarations here, if additional components are placed within the Auth module
+];
 
 @NgModule({
-  declarations: [
-    // TODO: Add declarations here, if additional components are placed within the Auth module
-    LoginComponent, LogoutComponent, RegisterComponent
-  ],
+  declarations: [ DECLARATIONS ],
   imports: [
     FormsModule,
     SharedModule
   ],
-  exports: [
-    // TODO: Add declarations here, if additional components are placed within the Auth module
-    LoginComponent, LogoutComponent, RegisterComponent
-  ],
+  exports: [ EXPORTS ],
   providers: [ AuthResourceService ]
 })
 export class AuthModule {

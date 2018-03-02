@@ -1,8 +1,5 @@
-import {Injectable} from '@angular/core';
-
 import {Account} from './account';
 
-@Injectable()
 export class Credential {
   constructor(
     public token: string,

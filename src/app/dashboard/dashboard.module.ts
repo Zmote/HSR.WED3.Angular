@@ -4,17 +4,21 @@ import {SharedModule} from '../shared/shared.module';
 
 import {DashbaordRoutingModule} from './dashboard-routing.module';
 
+const DECLARATIONS = [
+  // Declarations (Components / Directives) used from/within the Module
+];
+const EXPORTS = [
+  ...DECLARATIONS
+  // Components/Directives (or even Modules) to export (available for other modules; and forRoot() )
+];
+
 @NgModule({
-  declarations: [
-    // Declarations (Components / Directives) used from/within the Module
-  ],
+  declarations: [ DECLARATIONS ],
   imports: [
     // Other Modules to import (imports the exported Components/Directives from the other module)
     SharedModule, DashbaordRoutingModule
   ],
-  exports: [
-    // Components/Directives (or even Modules) to export (available for other modules; and forRoot() )
-  ],
+  exports: [ EXPORTS ],
   providers: [
     // DI Providers (hierarchical)
     // (Services, Tokens, Factories, ...) used from/within this Module; add either here or in forRoot();
