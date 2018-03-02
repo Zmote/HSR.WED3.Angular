@@ -1,39 +1,39 @@
 <!-- TODO: Add ng specific directives/validation settings and add styling -->
 <form (ngSubmit)="doRegister(null)">
-  <div>
-    <label for="wed-auth-register-firstname">First name</label>:
+  <label>
+    First name:
     <div>
-      <input pattern=".{2,}" placeholder="First name" type="text" name="firstname" id="wed-auth-register-firstname">
+      <input pattern=".{2,}" placeholder="First name" type="text" name="firstname">
       <div>Please specify your first name.</div>
     </div>
-  </div>
-  <div>
-    <label for="wed-auth-register-lastname">Last name</label>:
+  </label>
+  <label>
+    Last name:
     <div>
-      <input pattern=".{2,}" placeholder="Last name" type="text" name="lastname" id="wed-auth-register-lastname">
+      <input pattern=".{2,}" placeholder="Last name" type="text" name="lastname">
       <div>Please specify your last name.</div>
     </div>
-  </div>
-  <div>
-    <label for="wed-auth-register-login">User name</label>:
+  </label>
+  <label>
+    User name:
     <div>
-      <input pattern=".{3,}" placeholder="User" type="text" name="login" id="wed-auth-register-login">
+      <input pattern=".{3,}" placeholder="User" type="text" name="login">
       <div>Please specify your login, at least three characters.</div>
     </div>
-  </div>
-  <div>
-    <label for="wed-auth-register-lastname">Password</label>:
+  </label>
+  <label>
+    Password:
     <div>
-      <input pattern=".{3,}" placeholder="Password" type="password" name="password" id="wed-auth-register-password">
+      <input pattern=".{3,}" placeholder="Password" type="password" name="password">
       <div>Please specify your password, at least three characters.</div>
     </div>
-  </div>
-  <div>
-    <label for="wed-auth-register-passwordConfirm">Confirm Password</label>:
+  </label>
+  <label>
+    Confirm Password:
     <div>
-      <input pattern=".{3,}" placeholder="Password" type="password" name="passwordConfirm" id="wed-auth-register-passwordConfirm">
+      <input pattern=".{3,}" placeholder="Password" type="password" name="passwordConfirm">
       <div>Please confirm your password.</div>
     </div>
-  </div>
+  </label>
   <button>Register</button>
 </form>
