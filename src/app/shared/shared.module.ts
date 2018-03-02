@@ -1,20 +1,24 @@
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
-const DECLARATIONS = [
-  // TODO: Add declarations here, if additional components are placed within the shared module
+const EXPORTED_DECLARATIONS = [
+  // TODO: Add declarations here, if additional components/directives/... should be exported
+];
+const INTERNAL_DECLARATIONS = [
+  ...EXPORTED_DECLARATIONS
+  // Declarations (Components / Directives) which can be used inside the Module
 ];
 const EXPORTS = [
-  ...DECLARATIONS
-  // TODO: Add declarations here, if additional components are placed within the shared module
+  ...EXPORTED_DECLARATIONS
+  // TODO: Add exports here, if additional modules should be exported
 ];
 
 @NgModule({
-  declarations: [ DECLARATIONS ],
+  declarations: INTERNAL_DECLARATIONS,
   imports: [
     FormsModule
   ],
-  exports: [ EXPORTS ],
+  exports: EXPORTS,
   providers: []
 })
 export class SharedModule {

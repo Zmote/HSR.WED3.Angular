@@ -6,19 +6,25 @@ import {WelcomeRoutingModule} from './welcome-routing.module';
 import {WelcomeComponent} from './welcome.component';
 import {AuthModule} from '../auth/auth.module';
 
-const DECLARATIONS = [
+const EXPORTED_DECLARATIONS = [
+  // Declarations (Components / Directives) which can be used outside the Module
   WelcomeComponent
 ];
+const INTERNAL_DECLARATIONS = [
+  ...EXPORTED_DECLARATIONS
+  // Declarations (Components / Directives) which can be used inside the Module
+];
 const EXPORTS = [
-  ...DECLARATIONS
+  ...EXPORTED_DECLARATIONS
+  // Components/Directives (or even Modules) to export (available for other modules; and forRoot() )
 ];
 
 @NgModule({
-  declarations: [ DECLARATIONS ],
+  declarations: INTERNAL_DECLARATIONS,
   imports: [
     WelcomeRoutingModule, SharedModule, AuthModule
   ],
-  exports: [ EXPORTS ],
+  exports: EXPORTS,
   providers: [ ]
 })
 export class WelcomeModule {
