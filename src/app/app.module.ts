@@ -10,21 +10,28 @@ import {AppComponent} from './app.component';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AuthModule} from './auth/auth.module';
+import { NavComponent } from './nav/nav.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatToolbarModule, MatButtonModule} from '@angular/material';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-
     CoreModule.forRoot(),
     AuthModule.forRoot(),
     WelcomeModule.forRoot(),
-
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatDividerModule,
     AppRoutingModule
   ],
   providers: [
