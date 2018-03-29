@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   private backUrl;
   public isProcessing = false;
-  public registrationForm: LoginForm = new LoginForm();
+  public loginForm: LoginForm = new LoginForm();
 
   constructor(private autSvc: AuthService, private navigationSvc: NavigationService, route: ActivatedRoute) {
     route.params.subscribe(
@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
   }
 
   public doLogin(form: NgForm): boolean {
+    this.loginForm.submitted = true;
     if (form && form.valid) {
       this.isProcessing = true;
       this.autSvc.login(new LoginInfo(form.value.login, form.value.password));

@@ -30,6 +30,7 @@ export class RegisterComponent implements OnInit {
   }
 
   public doRegister(f: NgForm): boolean {
+    this.registrationForm.submitted = true;
     if (f && f.valid) {
       this.isProcessing = true;
       this.autSvc.register(new RegistrationInfo(
