@@ -8,6 +8,7 @@ import {AuthResourceService, TokenInterceptor} from './resources';
 import {LoginComponent, LogoutComponent,
   RegisterComponent} from './components';
 import {SharedModule} from '../shared/shared.module';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatToolbarModule} from '@angular/material';
 
 const EXPORTED_DECLARATIONS = [
   LoginComponent, LogoutComponent, RegisterComponent
@@ -25,7 +26,12 @@ const EXPORTS = [
   declarations: INTERNAL_DECLARATIONS,
   imports: [
     FormsModule,
-    SharedModule
+    SharedModule,
+    MatInputModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   exports: EXPORTS,
   providers: [ AuthResourceService ]

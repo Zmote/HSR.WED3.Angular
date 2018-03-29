@@ -1,18 +1,19 @@
 <!-- TODO: Add ng specific directives/validation settings and add styling -->
-<form (ngSubmit)="doLogin(null)">
-  <label>
-    User name:
-    <div>
-      <input pattern=".{3,}" placeholder="User" type="text" name="login">
-      <div>Please specify your login, at least three characters.</div>
-    </div>
-  </label>
-  <label>
-    Password:
-    <div>
-      <input pattern=".{3,}" placeholder="Password" type="password" name="password">
-      <div>Please specify your login, at least three characters.</div>
-    </div>
-  </label>
-  <button>Login</button>
-</form>
+<mat-card>
+  <mat-toolbar color="primary">
+    Bank of Rapperswil
+  </mat-toolbar>
+  <mat-card-content>
+    <form (ngSubmit)="doLogin(null)">
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{3,}" placeholder="User" type="text" name="login" value="">
+        <mat-hint>Please specify your login, at least three characters.</mat-hint>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{3,}" placeholder="Password" type="text" name="password" value="">
+        <mat-hint>Please specify your login, at least three characters.</mat-hint>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="loginButton">Login</button>
+    </form>
+  </mat-card-content>
+</mat-card>
