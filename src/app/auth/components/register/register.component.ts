@@ -1,22 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 
-import {NavigationService} from '../../core';
-
-import {AuthService} from '../services';
-import {RegistrationInfo} from '../models';
+import {NavigationService} from '../../../core/index';
+import {AuthService} from '../../services';
+import {RegistrationInfo} from '../../models';
+import RegistrationForm from './util/RegistrationForm';
 
 @Component({
   selector: 'wed-register',
-  templateUrl: 'register.component.html',
-  styleUrls: ['register.component.scss']
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
-  public login: string;
-  public password: string;
-  public firstname: string;
-  public lastname: string;
+  public registrationForm: RegistrationForm = new RegistrationForm();
 
   public isProcessing = false;
 

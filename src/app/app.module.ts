@@ -10,7 +10,7 @@ import {AppComponent} from './app.component';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AuthModule} from './auth/auth.module';
-import { NavComponent } from './nav/nav.component';
+import {NavComponent} from './nav/nav.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule, MatButtonModule} from '@angular/material';
@@ -34,9 +34,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatDividerModule,
     AppRoutingModule
   ],
-  providers: [
-
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

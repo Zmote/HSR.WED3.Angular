@@ -1,0 +1,108 @@
+<!-- TODO: Add ng specific directives/validation settings and add styling -->
+<mat-card class="mat-elevation-z4">
+  <mat-toolbar color="primary">
+    Bank of Rapperswil
+  </mat-toolbar>
+  <mat-card-content>
+    <h2>Register</h2>
+    <form (ngSubmit)="doRegister(registrationForm)" [formGroup]="registrationForm">
+      <!-- Firstname Field -->
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{2,}" placeholder="Firstname" type="text" name="firstname" formControlName="firstname">
+        <mat-hint>Please specify your first name, at least two characters.</mat-hint>
+        <mat-error *ngIf="registrationForm.get('firstname').hasError('required')">
+          Firstname is required
+        </mat-error>
+        <!-- eventhough Validator.minLength (camelCase), you'd expect the hassError - key to be minLength, but is actually: minlength, all lowercase , watch out for that -->
+        <mat-error *ngIf="registrationForm.get('firstname').hasError('minlength')">
+          Firstname needs to be longer than {{registrationForm.options.name.minLength}}
+        </mat-error>
+      </mat-form-field>
+      <!-- Lastname Field -->
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{2,}" placeholder="Lastname" type="text" name="lastname" formControlName="lastname">
+        <mat-hint>Please specify your last name, at least two characters.</mat-hint>
+        <mat-error *ngIf="registrationForm.get('lastname').hasError('required')">
+          Lastname is required
+        </mat-error>
+        <!-- eventhough Validator.minLength (camelCase), you'd expect the hassError - key to be minLength, but is actually: minlength, all lowercase , watch out for that -->
+        <mat-error *ngIf="registrationForm.get('lastname').hasError('minlength')">
+          Lastname needs to be longer than {{registrationForm.options.name.minLength}}
+        </mat-error>
+      </mat-form-field>
+      <!-- Username Field -->
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{3,}" placeholder="User" type="text" name="login" formControlName="login">
+        <mat-hint>Please specify your login, at least three characters.</mat-hint>
+        <mat-error *ngIf="registrationForm.get('login').hasError('required')">
+          Username is required
+        </mat-error>
+        <!-- eventhough Validator.minLength (camelCase), you'd expect the hassError - key to be minLength, but is actually: minlength, all lowercase , watch out for that -->
+        <mat-error *ngIf="registrationForm.get('login').hasError('minlength')">
+          Username needs to be longer than {{registrationForm.options.common.minLength}}
+        </mat-error>
+      </mat-form-field>
+      <!-- Password Field -->
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{3,}" placeholder="Password" type="password" name="password" formControlName="password">
+        <mat-hint>Please specify your password, at least three characters.</mat-hint>
+        <mat-error *ngIf="registrationForm.get('password').hasError('required')">
+          Password is required
+        </mat-error>
+        <!-- eventhough Validator.minLength (camelCase), you'd expect the hassError - key to be minLength, but is actually: minlength, all lowercase , watch out for that -->
+        <mat-error *ngIf="registrationForm.get('password').hasError('minlength')">
+          Password needs to be longer than {{registrationForm.options.common.minLength}}
+        </mat-error>
+      </mat-form-field>
+      <!-- Password Confirm Field-->
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{3,}" placeholder="Confirm Password" type="password" name="passwordConfirm" formControlName="passwordConfirm">
+        <mat-hint>Please confirm your password.</mat-hint>
+        <mat-error *ngIf="registrationForm.get('passwordConfirm').hasError('MatchPassword')">
+          Passwords don't match!
+        </mat-error>
+      </mat-form-field>
+      <!--Register Button -->
+      <button mat-raised-button color="accent" class="registerButton">Register</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!--<form (ngSubmit)="doRegister(null)">-->
+  <!--<label>-->
+    <!--First name:-->
+    <!--<div>-->
+      <!--<input pattern=".{2,}" placeholder="First name" type="text" name="firstname">-->
+      <!--<div>Please specify your first name.</div>-->
+    <!--</div>-->
+  <!--</label>-->
+  <!--<label>-->
+    <!--Last name:-->
+    <!--<div>-->
+      <!--<input pattern=".{2,}" placeholder="Last name" type="text" name="lastname">-->
+      <!--<div>Please specify your last name.</div>-->
+    <!--</div>-->
+  <!--</label>-->
+  <!--<label>-->
+    <!--User name:-->
+    <!--<div>-->
+      <!--<input pattern=".{3,}" placeholder="User" type="text" name="login">-->
+      <!--<div>Please specify your login, at least three characters.</div>-->
+    <!--</div>-->
+  <!--</label>-->
+  <!--<label>-->
+    <!--Password:-->
+    <!--<div>-->
+      <!--<input pattern=".{3,}" placeholder="Password" type="password" name="password">-->
+      <!--<div>Please specify your password, at least three characters.</div>-->
+    <!--</div>-->
+  <!--</label>-->
+  <!--<label>-->
+    <!--Confirm Password:-->
+    <!--<div>-->
+      <!--<input pattern=".{3,}" placeholder="Password" type="password" name="passwordConfirm">-->
+      <!--<div>Please confirm your password.</div>-->
+    <!--</div>-->
+  <!--</label>-->
+  <!--<button>Register</button>-->
+<!--</form>-->

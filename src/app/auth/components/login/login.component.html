@@ -4,29 +4,32 @@
   </mat-toolbar>
   <mat-card-content>
     <h2>Login</h2>
-    <form (ngSubmit)="doLogin(loginForm)" [formGroup]="loginForm">
+    <form (ngSubmit)="doLogin(registrationForm)" [formGroup]="registrationForm">
+      <!-- Username Field -->
       <mat-form-field class="full-width">
         <input matInput pattern=".{3,}" placeholder="User" type="text" name="login" formControlName="login">
         <mat-hint>Please specify your login, at least three characters.</mat-hint>
-        <mat-error *ngIf="loginForm.get('login').hasError('required')">
+        <mat-error *ngIf="registrationForm.get('login').hasError('required')">
           Username is required
         </mat-error>
         <!-- eventhough Validator.minLength (camelCase), you'd expect the hassError - key to be minLength, but is actually: minlength, all lowercase , watch out for that -->
-        <mat-error *ngIf="loginForm.get('login').hasError('minlength')">
-          Username needs to be longer than {{loginForm.options.common.minLength}}
+        <mat-error *ngIf="registrationForm.get('login').hasError('minlength')">
+          Username needs to be longer than {{registrationForm.options.common.minLength}}
         </mat-error>
       </mat-form-field>
+      <!-- Password Field -->
       <mat-form-field class="full-width">
         <input matInput pattern=".{3,}" placeholder="Password" type="password" name="password" formControlName="password">
-        <mat-hint>Please specify your login, at least three characters.</mat-hint>
-        <mat-error *ngIf="loginForm.get('password').hasError('required')">
+        <mat-hint>Please specify your password, at least three characters.</mat-hint>
+        <mat-error *ngIf="registrationForm.get('password').hasError('required')">
           Password is required
         </mat-error>
         <!-- eventhough Validator.minLength (camelCase), you'd expect the hassError - key to be minLength, but is actually: minlength, all lowercase , watch out for that -->
-        <mat-error *ngIf="loginForm.get('password').hasError('minlength')">
-          Password needs to be longer than {{loginForm.options.common.minLength}}
+        <mat-error *ngIf="registrationForm.get('password').hasError('minlength')">
+          Password needs to be longer than {{registrationForm.options.common.minLength}}
         </mat-error>
       </mat-form-field>
+      <!-- Login Button -->
       <button mat-raised-button color="accent" class="loginButton">Login</button>
     </form>
     <a class="loginButton" mat-button routerLink="register">Noch kein Account?</a>

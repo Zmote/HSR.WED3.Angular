@@ -1,0 +1,28 @@
+mat-card{
+  --wed-login-margin:1rem;
+  --wed-login-font-size:1rem;
+}
+
+.full-width{
+  width:100%;
+}
+
+.registerButton{
+  font-size:var(--wed-login-font-size);
+  margin-top:var(--wed-login-margin);
+}
+
+.mat-card{
+  margin:var(--wed-login-margin);
+  padding:0;
+}
+
+mat-card-content{
+  padding:var(--wed-login-margin);
+  font-size:var(--wed-login-font-size);
+}
+
+mat-form-field{
+  margin-bottom:var(--wed-login-margin);
+}
+
