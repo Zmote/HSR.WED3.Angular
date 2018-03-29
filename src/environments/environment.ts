@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  serverBaseUrl: 'http://localhost:3000'
+  serverBaseUrl: 'https://wed3-server-dogan-brunner.herokuapp.com'
 };

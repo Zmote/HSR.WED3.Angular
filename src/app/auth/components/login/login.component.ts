@@ -3,9 +3,8 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services';
 import {NavigationService} from '../../../core/services';
 import {LoginInfo} from '../../models';
-import LoginFormControls from './util/LoginFormControls';
+import LoginForm from './util/LoginForm';
 import {NgForm} from '@angular/forms';
-
 
 
 @Component({
@@ -16,12 +15,8 @@ import {NgForm} from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   private backUrl;
-
-  public login: string;
-  public password: string;
-
   public isProcessing = false;
-  public loginFormControls: LoginFormControls = new LoginFormControls();
+  public loginForm: LoginForm = new LoginForm();
 
   constructor(private autSvc: AuthService, private navigationSvc: NavigationService, route: ActivatedRoute) {
     route.params.subscribe(
@@ -43,10 +38,10 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  public doLogin(f: NgForm): boolean {
-    if (f && f.valid) {
+  public doLogin(form: NgForm): boolean {
+    if (form && form.valid) {
       this.isProcessing = true;
-      this.autSvc.login(new LoginInfo(f.value.login, f.value.password));
+      this.autSvc.login(new LoginInfo(form.value.login, form.value.password));
     }
     return false;
   }
