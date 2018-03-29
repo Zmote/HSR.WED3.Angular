@@ -1,16 +1,17 @@
 import {ActivatedRoute, Params} from '@angular/router';
 import {Component, OnInit} from '@angular/core';
-import {FormControl, NgForm, Validators} from '@angular/forms';
+import {AuthService} from '../../services';
+import {NavigationService} from '../../../core/services';
+import {LoginInfo} from '../../models';
+import LoginFormControls from './util/LoginFormControls';
+import {NgForm} from '@angular/forms';
 
-import {NavigationService} from '../../core';
 
-import {AuthService} from '../services';
-import {LoginInfo} from '../models';
 
 @Component({
   selector: 'wed-login',
-  templateUrl: 'login.component.html',
-  styleUrls: ['login.component.scss']
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 
@@ -20,9 +21,7 @@ export class LoginComponent implements OnInit {
   public password: string;
 
   public isProcessing = false;
-  public loginFormControl: FormControl = new FormControl('', {
-    validators: Validators.required
-  });
+  public loginFormControls: LoginFormControls = new LoginFormControls();
 
   constructor(private autSvc: AuthService, private navigationSvc: NavigationService, route: ActivatedRoute) {
     route.params.subscribe(

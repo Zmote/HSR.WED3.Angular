@@ -5,10 +5,14 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthService, SecurityTokenStore} from './services';
 import {AuthResourceService, TokenInterceptor} from './resources';
 
-import {LoginComponent, LogoutComponent,
-  RegisterComponent} from './components';
+import {
+  LoginComponent, LogoutComponent,
+  RegisterComponent
+} from './components';
 import {SharedModule} from '../shared/shared.module';
-import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatFormFieldModule, MatGridListModule, MatInputModule, MatToolbarModule} from '@angular/material';
+// CommonModule contains all the common directives etc. for Angualr, so... yes, it's kinda essential
+import {CommonModule} from '@angular/common';
 
 const EXPORTED_DECLARATIONS = [
   LoginComponent, LogoutComponent, RegisterComponent
@@ -25,6 +29,7 @@ const EXPORTS = [
 @NgModule({
   declarations: INTERNAL_DECLARATIONS,
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
@@ -32,7 +37,8 @@ const EXPORTS = [
     MatCardModule,
     MatToolbarModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    MatGridListModule
   ],
   exports: EXPORTS,
   providers: [ AuthResourceService ]

@@ -30,6 +30,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 https://material.angular.io/
 
+## API
+
+https://angular.io/api/
+
 ## Deployed on
 
 https://wed3-angular-brunner-dogan.netlify.com

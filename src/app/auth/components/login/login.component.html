@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-toolbar color="primary">
+    Bank of Rapperswil
+  </mat-toolbar>
+  <mat-card-content>
+    <form (ngSubmit)="doLogin(null)">
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{3,}" placeholder="User" type="text" name="login" [formControl]="loginFormControls.login">
+        <mat-hint>Please specify your login, at least three characters.</mat-hint>
+        <mat-error *ngIf="loginFormControls.login.hasError('required')">
+          Username is required
+        </mat-error>
+        <!-- eventhough Validator.minLength (camelCase), you'd expect the hassError - key to be minLength, but is actually: minlength, all lowercase , watch out for that -->
+        <mat-error *ngIf="loginFormControls.login.hasError('minlength')">
+          Username needs to be longer than {{loginFormControls.opts.common.minLength}}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{3,}" placeholder="Password" type="password" name="password" [formControl]="loginFormControls.password">
+        <mat-hint>Please specify your login, at least three characters.</mat-hint>
+        <mat-error *ngIf="loginFormControls.password.hasError('required')">
+          Password is required
+        </mat-error>
+        <!-- eventhough Validator.minLength (camelCase), you'd expect the hassError - key to be minLength, but is actually: minlength, all lowercase , watch out for that -->
+        <mat-error *ngIf="loginFormControls.password.hasError('minlength')">
+          Password needs to be longer than {{loginFormControls.opts.common.minLength}}
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="accent" class="loginButton">Login</button>
+    </form>
+  </mat-card-content>
+</mat-card>
