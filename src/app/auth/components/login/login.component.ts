@@ -4,7 +4,7 @@ import {AuthService} from '../../services';
 import {NavigationService} from '../../../core/services';
 import {LoginInfo} from '../../models';
 import LoginForm from './util/LoginForm';
-import {NgForm} from '@angular/forms';
+import {FormGroup} from '@angular/forms';
 
 
 @Component({
@@ -38,8 +38,7 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  public doLogin(form: NgForm): boolean {
-    this.loginForm.submitted = true;
+  public doLogin(form: FormGroup): boolean {
     if (form && form.valid) {
       this.isProcessing = true;
       this.autSvc.login(new LoginInfo(form.value.login, form.value.password));

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForm} from '@angular/forms';
+import {FormGroup, NgForm} from '@angular/forms';
 
 import {NavigationService} from '../../../core/index';
 import {AuthService} from '../../services';
@@ -29,8 +29,7 @@ export class RegisterComponent implements OnInit {
       });
   }
 
-  public doRegister(f: NgForm): boolean {
-    this.registrationForm.submitted = true;
+  public doRegister(f: FormGroup): boolean {
     if (f && f.valid) {
       this.isProcessing = true;
       this.autSvc.register(new RegistrationInfo(

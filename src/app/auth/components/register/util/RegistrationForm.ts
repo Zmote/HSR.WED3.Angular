@@ -14,8 +14,6 @@ export class RegistrationForm extends FormGroup {
     }
   };
 
-  public submitted = false;
-
   constructor() {
     super({
         firstname: new FormControl('', {

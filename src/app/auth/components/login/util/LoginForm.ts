@@ -10,8 +10,6 @@ export class LoginForm extends FormGroup {
     }
   };
 
-  public submitted = false;
-
   constructor() {
     super({
       login: new FormControl('', {
