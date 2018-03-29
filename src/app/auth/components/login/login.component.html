@@ -1,8 +1,9 @@
-<mat-card>
+<mat-card class="mat-elevation-z4">
   <mat-toolbar color="primary">
     Bank of Rapperswil
   </mat-toolbar>
   <mat-card-content>
+    <h2>Login</h2>
     <form (ngSubmit)="doLogin(null)">
       <mat-form-field class="full-width">
         <input matInput pattern=".{3,}" placeholder="User" type="text" name="login" [formControl]="loginFormControls.login">
@@ -28,5 +29,6 @@
       </mat-form-field>
       <button mat-raised-button color="accent" class="loginButton">Login</button>
     </form>
+    <a class="loginButton" mat-button routerLink="register">Noch kein Account?</a>
   </mat-card-content>
 </mat-card>

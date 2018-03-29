@@ -1,21 +1,28 @@
+mat-card{
+  --wed-login-margin:1rem;
+  --wed-login-font-size:1rem;
+}
+
 .full-width{
   width:100%;
 }
 
 .loginButton{
-  margin-top:16px;
+  font-size:var(--wed-login-font-size);
+  margin-top:var(--wed-login-margin);
 }
 
 .mat-card{
-  width:50%;
-  margin:32px auto;
+  margin:var(--wed-login-margin);
   padding:0;
 }
 
 mat-card-content{
-  padding:16px;
+  padding:var(--wed-login-margin);
+  font-size:var(--wed-login-font-size);
 }
 
 mat-form-field{
-  margin-bottom:8px;
+  margin-bottom:var(--wed-login-margin);
 }
+
