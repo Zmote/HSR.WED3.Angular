@@ -1,5 +1,5 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import {AuthService, SecurityTokenStore} from './services';
@@ -25,6 +25,7 @@ const EXPORTS = [
 @NgModule({
   declarations: INTERNAL_DECLARATIONS,
   imports: [
+    ReactiveFormsModule,
     FormsModule,
     SharedModule,
     MatInputModule,

@@ -1,6 +1,6 @@
 import {ActivatedRoute, Params} from '@angular/router';
 import {Component, OnInit} from '@angular/core';
-import {NgForm} from '@angular/forms';
+import {FormControl, NgForm, Validators} from '@angular/forms';
 
 import {NavigationService} from '../../core';
 
@@ -20,6 +20,9 @@ export class LoginComponent implements OnInit {
   public password: string;
 
   public isProcessing = false;
+  public loginFormControl: FormControl = new FormControl('', {
+    validators: Validators.required
+  });
 
   constructor(private autSvc: AuthService, private navigationSvc: NavigationService, route: ActivatedRoute) {
     route.params.subscribe(
