@@ -4,6 +4,15 @@
   flex: 1 1 auto;
 }
 
-.margin-left{
-  margin-left:16px;
+.margin-right{
+  margin-right:16px;
+}
+
+@import '../../styles';
+
+.active-link{
+  background: mat-color($candy-app-primary,700);
+}
+.active-raised-link{
+  background: mat-color($candy-app-accent);
 }

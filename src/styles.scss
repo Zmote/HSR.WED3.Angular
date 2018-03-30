@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-html,body{
-  margin:0;
-  padding:0;
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
 //@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
@@ -18,10 +18,10 @@ html,body{
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://www.google.com/design/spec/style/color.html
 $candy-app-primary: mat-palette($mat-grey, 800);
-$candy-app-accent:  mat-palette($mat-blue, A200, A100, A400);
+$candy-app-accent: mat-palette($mat-blue, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$candy-app-warn:    mat-palette($mat-red);
+$candy-app-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
@@ -30,3 +30,62 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($candy-app-theme);
+
+/*
+  CSS for initial Loader when application is initializing, inspired from w3schools example
+  Note: The content where these apply get replaced when application is loaded
+*/
+.flex-container {
+  font-family: "Roboto", "sans-serif";
+  color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Little hack, so text is only display when this file is loaded
+.loader-text-before:before {
+  content: "Application is loading";
+  text-align: center;
+}
+
+.loader-text-after:before {
+  content: "Please wait...";
+  text-align: center;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

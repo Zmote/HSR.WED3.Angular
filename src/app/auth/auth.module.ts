@@ -32,8 +32,8 @@ const EXPORTS = [
   declarations: INTERNAL_DECLARATIONS,
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
+    ReactiveFormsModule, // --> one of these is superfluous, or should be
+    FormsModule, // --> one of these is superfluous, or should be
     SharedModule,
     MatInputModule,
     MatCardModule,

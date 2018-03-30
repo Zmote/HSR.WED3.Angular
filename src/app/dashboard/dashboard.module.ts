@@ -3,11 +3,17 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 import {SharedModule} from '../shared/shared.module';
 
 import {DashbaordRoutingModule} from './dashboard-routing.module';
-import {PaymentComponent, TransactionComponent} from './components';
+import {PaymentComponent, TransactionComponent, HomeComponent} from './components';
 import {DashboardComponent} from './dashboard.component';
+import {
+  MatButtonModule, MatCardModule, MatFormFieldModule, MatGridListModule, MatInputModule, MatPaginatorModule, MatTableModule,
+  MatToolbarModule
+} from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
 
 const EXPORTED_DECLARATIONS = [
-  DashboardComponent, PaymentComponent, TransactionComponent
+  DashboardComponent, PaymentComponent, TransactionComponent, HomeComponent
   // Declarations (Components / Directives) which can be used outside the Module
 ];
 const INTERNAL_DECLARATIONS = [
@@ -23,7 +29,19 @@ const EXPORTS = [
   declarations: INTERNAL_DECLARATIONS,
   imports: [
     // Other Modules to import (imports the exported Components/Directives from the other module)
-    SharedModule, DashbaordRoutingModule
+    ReactiveFormsModule, // --> one of these is superfluous, or should be
+    FormsModule, // --> one of these is superfluous, or should be
+    SharedModule,
+    CommonModule,
+    DashbaordRoutingModule,
+    MatInputModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   exports: EXPORTS,
   providers: [
