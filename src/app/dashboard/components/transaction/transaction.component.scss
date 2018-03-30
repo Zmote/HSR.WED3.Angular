@@ -1,0 +1,54 @@
+mat-card{
+  --wed-login-margin:1rem;
+  --wed-login-font-size:1rem;
+}
+
+.full-width{
+  width:100%;
+}
+
+.loginButton{
+  font-size:var(--wed-login-font-size);
+  margin-top:var(--wed-login-margin);
+}
+
+.mat-card{
+  margin:var(--wed-login-margin);
+  padding:0;
+}
+
+mat-card-content{
+  padding:var(--wed-login-margin);
+  font-size:var(--wed-login-font-size);
+}
+
+mat-form-field{
+  margin-bottom:var(--wed-login-margin);
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+@import '../../../../styles';
+.mat-header-row {
+  position: sticky;
+  top: 0;
+  background: mat-color($candy-app-primary);
+}
+
+.mat-header-cell{
+  color:mat-color($candy-app-primary,50);
+}
+
