@@ -14,7 +14,7 @@ export class TransactionComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   // Is there a way to do it by only providing the property, like matButton, without attributes?
   @Input() title = 'Transactions';
-  @Input() withFiltering = false;
+  @Input() withFiltering = true;
   @Input() withRedirectButton = false;
 
   constructor() {

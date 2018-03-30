@@ -1,6 +1,6 @@
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
-export class LoginForm extends FormGroup {
+export class PaymentForm extends FormGroup {
   // To use automatically in template
   // because we pass it to super, it needs to be static
   // Ask: Could this be done in a better way?
@@ -12,24 +12,24 @@ export class LoginForm extends FormGroup {
 
   constructor() {
     super({
-      login: new FormControl('', {
+      to: new FormControl('', {
         validators: [
           Validators.required,
-          Validators.minLength(LoginForm.opts.common.minLength)
+          Validators.minLength(PaymentForm.opts.common.minLength)
         ]
       }),
-      password: new FormControl('', {
+      amount: new FormControl('', {
         validators: [
           Validators.required,
-          Validators.minLength(LoginForm.opts.common.minLength)
+          Validators.minLength(PaymentForm.opts.common.minLength)
         ]
       })
     });
   }
 
   get options() {
-    return LoginForm.opts;
+    return PaymentForm.opts;
   }
 }
 
-export default LoginForm;
+export default PaymentForm;

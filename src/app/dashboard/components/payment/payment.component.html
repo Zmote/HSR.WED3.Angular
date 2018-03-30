@@ -1,3 +1,38 @@
-<p>
-  payment works!
-</p>
+<mat-card class="mat-elevation-z4">
+  <mat-toolbar color="primary">New Payment</mat-toolbar>
+  <mat-card-content>
+    <form (ngSubmit)="doPay(paymentForm)" [formGroup]="paymentForm">
+      <!-- Username Field -->
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{3,}" placeholder="From" type="number" value="10000004" disabled>
+        <mat-hint>User Account Nr.</mat-hint>
+      </mat-form-field>
+      <!-- To field -->
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{3,}" placeholder="To" type="number" name="to" formControlName="to">
+        <mat-hint>Please specify a valid target account.</mat-hint>
+        <mat-error *ngIf="paymentForm.get('to').hasError('required')">
+          Password is required
+        </mat-error>
+        <!-- eventhough Validator.minLength (camelCase), you'd expect the hassError - key to be minLength, but is actually: minlength, all lowercase , watch out for that -->
+        <mat-error *ngIf="paymentForm.get('to').hasError('minlength')">
+          Password needs to be longer than {{paymentForm.options.common.minLength}}
+        </mat-error>
+      </mat-form-field>
+      <!-- Amount Field -->
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{3,}" placeholder="Amount (CHF)" type="number" name="amount" formControlName="amount">
+        <mat-hint>Please specify a valid amount.</mat-hint>
+        <mat-error *ngIf="paymentForm.get('amount').hasError('required')">
+          Password is required
+        </mat-error>
+        <!-- eventhough Validator.minLength (camelCase), you'd expect the hassError - key to be minLength, but is actually: minlength, all lowercase , watch out for that -->
+        <mat-error *ngIf="paymentForm.get('amount').hasError('minlength')">
+          Password needs to be longer than {{paymentForm.options.common.minLength}}
+        </mat-error>
+      </mat-form-field>
+      <!-- Pay Button -->
+      <button mat-raised-button color="accent" class="payButton">Pay</button>
+    </form>
+  </mat-card-content>
+</mat-card>

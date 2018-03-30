@@ -43,7 +43,6 @@
         [pageSize]="10"
         [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
     </div>
-    <!--Needs to be change to a router type button/a-->
-    <button *ngIf="withRedirectButton" mat-raised-button color="accent" class="loginButton">All Transactions</button>
+    <a *ngIf="withRedirectButton" mat-raised-button color="accent" class="loginButton" routerLink="transactions">All Transactions</a>
   </mat-card-content>
 </mat-card>

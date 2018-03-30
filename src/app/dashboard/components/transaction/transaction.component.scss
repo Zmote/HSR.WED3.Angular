@@ -41,6 +41,13 @@ mat-form-field{
   font-size: 14px;
   width: 100%;
 }
+
+mat-table{
+  overflow:auto;
+  // Because of available paging
+  max-height: 550px;
+}
+
 @import '../../../../styles';
 .mat-header-row {
   position: sticky;
