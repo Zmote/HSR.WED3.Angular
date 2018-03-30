@@ -3,8 +3,11 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 import {SharedModule} from '../shared/shared.module';
 
 import {DashbaordRoutingModule} from './dashboard-routing.module';
+import {PaymentComponent, TransactionComponent} from './components';
+import {DashboardComponent} from './dashboard.component';
 
 const EXPORTED_DECLARATIONS = [
+  DashboardComponent, PaymentComponent, TransactionComponent
   // Declarations (Components / Directives) which can be used outside the Module
 ];
 const INTERNAL_DECLARATIONS = [
@@ -33,7 +36,7 @@ export class DashboardModule {
   static forRoot(config?: {}): ModuleWithProviders {
     return {
       ngModule: DashboardModule,
-      providers: [ ]
+      providers: []
     };
   }
 

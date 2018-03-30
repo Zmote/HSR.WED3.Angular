@@ -15,6 +15,7 @@ import {NavComponent} from './nav/nav.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule, MatButtonModule} from '@angular/material';
 import {MatDividerModule} from '@angular/material/divider';
+import {DashboardModule} from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {MatDividerModule} from '@angular/material/divider';
     CoreModule.forRoot(),
     AuthModule.forRoot(),
     WelcomeModule.forRoot(),
+    DashboardModule.forRoot(),
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
