@@ -1,8 +1,12 @@
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {PageNotFoundComponent} from './components/pagenotfound/pagenotfound.component';
+import {MatButtonModule} from '@angular/material';
+import {RouterModule} from '@angular/router';
 
 const EXPORTED_DECLARATIONS = [
   // TODO: Add declarations here, if additional components/directives/... should be exported
+  PageNotFoundComponent
 ];
 const INTERNAL_DECLARATIONS = [
   ...EXPORTED_DECLARATIONS
@@ -16,7 +20,9 @@ const EXPORTS = [
 @NgModule({
   declarations: INTERNAL_DECLARATIONS,
   imports: [
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    RouterModule
   ],
   exports: EXPORTS,
   providers: []
