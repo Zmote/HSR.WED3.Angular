@@ -13,7 +13,7 @@ import {AuthModule} from './auth/auth.module';
 import {NavComponent} from './nav/nav.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule, MatButtonModule} from '@angular/material';
+import {MatToolbarModule, MatButtonModule, MatMenuModule, MatIconModule} from '@angular/material';
 import {MatDividerModule} from '@angular/material/divider';
 import {DashboardModule} from './dashboard/dashboard.module';
 
@@ -32,6 +32,8 @@ import {DashboardModule} from './dashboard/dashboard.module';
     DashboardModule.forRoot(),
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
     MatButtonModule,
     MatDividerModule,
     AppRoutingModule

@@ -1,3 +1,8 @@
+//because mat-table causes issues when getting to small
+//with :host, we can style the component itself from within the component
+:host{
+  min-width:450px;
+}
 mat-card{
   --wed-login-margin:1rem;
   --wed-login-font-size:1rem;

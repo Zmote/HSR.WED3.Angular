@@ -4,8 +4,24 @@
   flex: 1 1 auto;
 }
 
-.margin-right{
+.label{
   margin-right:16px;
+  // makes navbar a little more dynamic by allowing for the label to break
+  white-space: pre-wrap;
+}
+//a makes the navbar a little more dynamic by allowing it to grow past 64px
+mat-toolbar{
+  min-height:64px;
+}
+
+.visible-menu{
+  display:flex;
+  flex-wrap:wrap;
+  flex-grow:1;
+}
+
+.menu{
+  display:none;
 }
 
 @import '../../styles';
@@ -15,4 +31,22 @@
 }
 .active-raised-link{
   background: mat-color($candy-app-accent);
+}
+
+.active-link-item{
+  background: mat-color($candy-app-primary,200);
+}
+
+.dynamic-toolbar{
+  flex-wrap:wrap;
+  height:100%;
+}
+
+@media screen and (max-width: 897px){
+  .menu{
+    display:initial;
+  }
+  .visible-menu{
+    display:none;
+  }
 }
