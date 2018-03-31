@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   private backUrl;
   public isProcessing = false;
-  public paymentForm: LoginForm = new LoginForm();
+  public loginForm: LoginForm = new LoginForm();
 
   constructor(private autSvc: AuthService, private navigationSvc: NavigationService, route: ActivatedRoute) {
     route.params.subscribe(

@@ -8,7 +8,7 @@ import PaymentForm from './util/PaymentForm';
 })
 export class PaymentComponent implements OnInit {
 
-  private paymentForm: PaymentForm = new PaymentForm();
+  public paymentForm: PaymentForm = new PaymentForm();
 
   constructor() {
   }
