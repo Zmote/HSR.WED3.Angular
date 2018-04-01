@@ -1,0 +1,10 @@
+<!--Render as a normal button-->
+<a *ngIf="!asItem" (click)="doLogout()" mat-button>
+  <mat-icon>exit_to_app</mat-icon>
+  <span>Logout {{user.firstname}} {{user.lastname}}</span>
+</a>
+<!--Render as a menu item-->
+<a *ngIf="asItem" (click)="doLogout()" mat-menu-item>
+  <mat-icon>exit_to_app</mat-icon>
+  <span>Logout {{user.firstname}} {{user.lastname}}</span>
+</a>

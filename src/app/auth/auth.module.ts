@@ -10,7 +10,10 @@ import {
   RegisterComponent
 } from './components';
 import {SharedModule} from '../shared/shared.module';
-import {MatButtonModule, MatCardModule, MatFormFieldModule, MatGridListModule, MatInputModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule, MatCardModule, MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule, MatMenuModule,
+  MatToolbarModule
+} from '@angular/material';
 
 // CommonModule contains all the common directives etc. for Angualr, so... yes, it's kinda essential
 import {CommonModule} from '@angular/common';
@@ -18,11 +21,9 @@ import {RouterModule} from '@angular/router';
 
 const EXPORTED_DECLARATIONS = [
   LoginComponent, LogoutComponent, RegisterComponent
-  // TODO: Add declarations here, if additional components should be exported
 ];
 const INTERNAL_DECLARATIONS = [
   ...EXPORTED_DECLARATIONS
-  // TODO: Add declarations here, if additional components should be registered for the Auth module
 ];
 const EXPORTS = [
   ...EXPORTED_DECLARATIONS
@@ -41,6 +42,8 @@ const EXPORTS = [
     MatFormFieldModule,
     MatButtonModule,
     MatGridListModule,
+    MatIconModule,
+    MatMenuModule,
     RouterModule
   ],
   exports: EXPORTS,

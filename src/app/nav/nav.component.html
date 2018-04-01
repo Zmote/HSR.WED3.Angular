@@ -10,19 +10,20 @@
           <mat-icon>home</mat-icon>
           <span>Home</span>
         </a>
-        <a mat-menu-item routerLink="dashboard/transactions" routerLinkActive="active-link-item" [routerLinkActiveOptions]="{exact:true}">
-          <mat-icon>money</mat-icon>
-          <span>Transactions</span>
-        </a>
-        <a mat-menu-item routerLink="dashboard" routerLinkActive="active-link-item" [routerLinkActiveOptions]="{exact:true}">
+        <a *ngIf="authService.hasCredentials" mat-menu-item routerLink="dashboard" routerLinkActive="active-link-item" [routerLinkActiveOptions]="{exact:true}">
           <mat-icon>dashboard</mat-icon>
           <span>Dashboard</span>
         </a>
+        <a *ngIf="authService.hasCredentials" mat-menu-item routerLink="dashboard/transactions" routerLinkActive="active-link-item" [routerLinkActiveOptions]="{exact:true}">
+          <mat-icon>money</mat-icon>
+          <span>Transactions</span>
+        </a>
         <!-- Does this need to be different? I guess it's up for debate -->
-        <a mat-menu-item routerLink="welcome/register" routerLinkActive="active-link-item" [routerLinkActiveOptions]="{exact:true}">
+        <a *ngIf="!authService.hasCredentials" mat-menu-item routerLink="welcome/register" routerLinkActive="active-link-item" [routerLinkActiveOptions]="{exact:true}">
           <mat-icon>account_circle</mat-icon>
           <span>Register</span>
         </a>
+        <wed-logout *ngIf="authService.hasCredentials" [asItem]="true"></wed-logout>
       </mat-menu>
     </div>
     <span class="label">WED3 Testat Angular / Brunner - Dogan</span>
@@ -33,19 +34,20 @@
       <mat-icon>home</mat-icon>
       <span>Home</span>
     </a>
-    <a mat-button routerLink="dashboard/transactions" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+    <a *ngIf="authService.hasCredentials" mat-button routerLink="dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </a>
+    <a *ngIf="authService.hasCredentials" mat-button routerLink="dashboard/transactions" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
       <mat-icon>money</mat-icon>
       <span>Transactions</span>
     </a>
     <span class="example-fill-remaining-space"></span>
-    <a mat-button routerLink="dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-      <mat-icon>dashboard</mat-icon>
-      <span>Dashboard</span>
-    </a>
     <!-- Does this need to be different? I guess it's up for debate -->
-    <a mat-button routerLink="welcome/register" routerLinkActive="active-raised-link" [routerLinkActiveOptions]="{exact:true}">
+    <a *ngIf="!authService.hasCredentials" mat-button routerLink="welcome/register" routerLinkActive="active-raised-link" [routerLinkActiveOptions]="{exact:true}">
       <mat-icon>account_circle</mat-icon>
       <span>Register</span>
     </a>
+    <wed-logout *ngIf="authService.hasCredentials"></wed-logout>
   </div>
 </mat-toolbar>
