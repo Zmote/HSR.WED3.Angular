@@ -1,8 +1,6 @@
 export * from './components';
-// Uncomment these when appropriate classes exist, empty folder cause build to fail on deploy
-// export * from './models';
+export * from './models';
+// Uncomment this when something exists in resources, empty folders cause problems (ie. nothing to export)
 // export * from './resources';
-// export * from './services';
-
-// TODO: Add barrel exports of your features (export * from '...';) here...
+export * from './services';
 

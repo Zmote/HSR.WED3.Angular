@@ -11,28 +11,34 @@
 
       <mat-table #table [dataSource]="dataSource">
 
-        <!-- Position Column -->
-        <ng-container matColumnDef="position">
-          <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+          <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
         </ng-container>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        <!-- From Column -->
+        <ng-container matColumnDef="from">
+          <mat-header-cell *matHeaderCellDef> From </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.from}} </mat-cell>
         </ng-container>
 
-        <!-- Weight Column -->
-        <ng-container matColumnDef="weight">
-          <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+        <!-- Target Column -->
+        <ng-container matColumnDef="target">
+          <mat-header-cell *matHeaderCellDef> Target </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.target}} </mat-cell>
         </ng-container>
 
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="symbol">
-          <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+        <!-- Amount Column -->
+        <ng-container matColumnDef="amount">
+          <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.amount}} </mat-cell>
+        </ng-container>
+
+        <!-- Total Column -->
+        <ng-container matColumnDef="total">
+          <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.total}} </mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

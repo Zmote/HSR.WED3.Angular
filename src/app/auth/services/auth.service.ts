@@ -32,16 +32,16 @@ export class AuthService {
     this.resource.register(registerModel).subscribe(
       (data: Account) => {
         this.login(registerModel);
-      } );
+      });
   }
 
-  public login(loginModel: LoginInfo):void {
+  public login(loginModel: LoginInfo): void {
     this.resource.login(loginModel).subscribe(
       (data: Credential) => {
         this.tokenStore.storedValue = data;
         this.authUser = !isBlank(data) ? data.owner : null;
         this.authenticatedUserChange.emit(this.authenticatedUser);
-      } );
+      });
   }
 
   public logout(): void {

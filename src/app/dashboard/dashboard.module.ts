@@ -11,6 +11,7 @@ import {
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import {TransactionService} from './services/transaction.service';
 
 const EXPORTED_DECLARATIONS = [
   DashboardComponent, PaymentComponent, TransactionComponent, HomeComponent
@@ -48,13 +49,16 @@ const EXPORTS = [
     // DI Providers (hierarchical)
     // (Services, Tokens, Factories, ...) used from/within this Module; add either here or in forRoot();
     //  * Registers these Classes for the current Module; importing Modules will create new instances (for importing level and below)
+    TransactionService
   ]
 })
 export class DashboardModule {
   static forRoot(config?: {}): ModuleWithProviders {
     return {
       ngModule: DashboardModule,
-      providers: []
+      providers: [
+        TransactionService
+      ]
     };
   }
 

@@ -4,19 +4,27 @@
     <form (ngSubmit)="doPay(paymentForm)" [formGroup]="paymentForm">
       <!-- Username Field -->
       <mat-form-field class="full-width">
-        <input matInput pattern=".{3,}" placeholder="From" type="number" value="10000004" disabled>
+        <input matInput pattern=".{3,}" placeholder="From" type="number" [value]="accountDetail.accountNr" disabled>
         <mat-hint>User Account Nr.</mat-hint>
+      </mat-form-field>
+      <!-- Username Field -->
+      <mat-form-field class="full-width">
+        <input matInput pattern=".{3,}" placeholder="Balance" type="number" [value]="accountDetail.amount" disabled>
+        <mat-hint>Balance.</mat-hint>
       </mat-form-field>
       <!-- To field -->
       <mat-form-field class="full-width">
-        <input matInput pattern=".{3,}" placeholder="To" type="number" name="to" formControlName="to">
-        <mat-hint>Please specify a valid target account.</mat-hint>
+        <input matInput pattern=".{3,}" placeholder="To" type="number" name="to" formControlName="to"
+               (keyup)="onTargetAccountChange($event.target.value)">
+        <mat-hint>{{targetAccountDetail? targetAccountDetail.firstname + ' ' + targetAccountDetail.lastname :
+          'Please specify a valid target account.'}}
+        </mat-hint>
         <mat-error *ngIf="paymentForm.get('to').hasError('required')">
-          Password is required
+          Target Account is required
         </mat-error>
         <!-- eventhough Validator.minLength (camelCase), you'd expect the hassError - key to be minLength, but is actually: minlength, all lowercase , watch out for that -->
         <mat-error *ngIf="paymentForm.get('to').hasError('minlength')">
-          Password needs to be longer than {{paymentForm.options.common.minLength}}
+          Target account needs to be valid {{paymentForm.options.common.minLength}}
         </mat-error>
       </mat-form-field>
       <!-- Amount Field -->
@@ -24,11 +32,11 @@
         <input matInput pattern=".{3,}" placeholder="Amount (CHF)" type="number" name="amount" formControlName="amount">
         <mat-hint>Please specify a valid amount.</mat-hint>
         <mat-error *ngIf="paymentForm.get('amount').hasError('required')">
-          Password is required
+          Amount is required
         </mat-error>
         <!-- eventhough Validator.minLength (camelCase), you'd expect the hassError - key to be minLength, but is actually: minlength, all lowercase , watch out for that -->
         <mat-error *ngIf="paymentForm.get('amount').hasError('minlength')">
-          Password needs to be longer than {{paymentForm.options.common.minLength}}
+          Amount needs to be bigger than 1 {{paymentForm.options.common.minLength}}
         </mat-error>
       </mat-form-field>
       <!-- Pay Button -->
