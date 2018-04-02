@@ -1,4 +1,5 @@
-export type AccountNr = string;
+import {AccountNr} from './types/type-definitions';
+
 export class AccountDetailInfo {
   constructor(public accountNr: AccountNr = '',
               public amount: number = 0,
@@ -14,4 +15,4 @@ export class AccountDetailInfo {
       data.owner.lastname
     );
   }
-} export default AccountDetailInfo;
+}

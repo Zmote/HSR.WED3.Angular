@@ -1,4 +1,4 @@
-export type AccountNr = string;
+import {AccountNr} from './types/type-definitions';
 
 export class TransactionInfo {
   constructor(public from: AccountNr = '',

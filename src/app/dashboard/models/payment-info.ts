@@ -1,4 +1,4 @@
-export type AccountNr = string;
+import {AccountNr} from './types/type-definitions';
 
 export class PaymentInfo {
   constructor(private targetAccountNr: AccountNr, private amount: number) {
