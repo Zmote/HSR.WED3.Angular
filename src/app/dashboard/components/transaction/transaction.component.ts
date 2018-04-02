@@ -13,7 +13,7 @@ export class TransactionComponent implements OnInit, AfterViewInit {
   private ELEMENT_DATA: TransactionInfo[] = [];
 
   displayedColumns = ['date', 'from', 'target', 'amount', 'total'];
-  protected dataSource: MatTableDataSource<TransactionInfo> = new MatTableDataSource();
+  dataSource: MatTableDataSource<TransactionInfo> = new MatTableDataSource();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
