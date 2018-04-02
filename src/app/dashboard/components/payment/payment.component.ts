@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import PaymentForm from './util/PaymentForm';
-import {TransactionService} from '../../services/transaction.service';
-import {AccountDetailInfo} from '../../models/account-detail-info';
-import {PaymentInfo} from '../../models/payment-info';
+import {AccountDetailInfo, PaymentInfo} from '../../models';
+import {TransactionService} from '../../services';
 
 @Component({
   selector: 'wed-payment',

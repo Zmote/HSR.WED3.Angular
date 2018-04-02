@@ -1,8 +1,8 @@
 import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-import {TransactionService} from '../../services/transaction.service';
-import {QueryInfo} from '../../models/query-info';
-import {TransactionInfo} from '../../models/transaction-info';
+import {QueryInfo, TransactionInfo} from '../../models';
+import {TransactionService} from '../../services';
+
 
 @Component({
   selector: 'wed-transaction',
