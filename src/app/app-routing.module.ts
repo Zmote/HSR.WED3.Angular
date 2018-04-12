@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {PageNotFoundComponent} from './shared/components/pagenotfound/pagenotfound.component';
+import {PageNotFoundComponent} from './shared/components';
 
 const appRoutes: Routes = [
   // TODO: Add routing of lazy loaded dashboard Module (with guards) here...

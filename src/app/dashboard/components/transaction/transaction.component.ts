@@ -2,7 +2,7 @@ import {AfterViewInit, Component, Input, OnInit, ViewChild} from '@angular/core'
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {QueryInfo, TransactionInfo} from '../../models';
 import {TransactionService} from '../../services';
-
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'wed-transaction',
@@ -10,23 +10,30 @@ import {TransactionService} from '../../services';
   styleUrls: ['./transaction.component.scss']
 })
 export class TransactionComponent implements OnInit, AfterViewInit {
-  private ELEMENT_DATA: TransactionInfo[] = [];
 
   displayedColumns = ['date', 'from', 'target', 'amount', 'total'];
   dataSource: MatTableDataSource<TransactionInfo> = new MatTableDataSource();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  // Is there a way to do it by only providing the property, like matButton, without attributes?
+
   @Input() title = 'Transactions';
-  @Input() withFiltering = true;
+  @Input() withFiltering = false;
   @Input() withRedirectButton = false;
 
-  constructor(private transactionService: TransactionService) {
+  constructor(private transactionService: TransactionService, private route: ActivatedRoute) {
     this.getTransactions();
   }
 
   ngOnInit() {
+    this.route.data.subscribe((value) => {
+      if (value.withFiltering) {
+        this.withFiltering = value.withFiltering;
+      }
+      if (value.withRedirectButton) {
+        this.withRedirectButton = value.withRedirectButton;
+      }
+    });
     this.transactionService.change.subscribe(() => {
       this.getTransactions();
     });
@@ -51,5 +58,4 @@ export class TransactionComponent implements OnInit, AfterViewInit {
       }
     });
   }
-
 }

@@ -1,7 +1,5 @@
 <!-- Not using mat-grid-list, it's too buggy for this scenario here-->
 <div class="grid-flex-parent">
   <wed-payment></wed-payment>
-  <!--How can we do this with just typing withRedirectButton, ie without settings a fix value like ="true"-->
-  <!--I want it to render the redirect button if the property exists-->
-  <wed-transaction [withRedirectButton]="true" [title]="'Recent Transactions'" [withFiltering]="false"></wed-transaction>
+  <wed-transaction wedWithRedirectButton [title]="'Recent Transactions'"></wed-transaction>
 </div>

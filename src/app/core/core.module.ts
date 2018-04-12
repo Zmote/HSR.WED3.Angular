@@ -12,7 +12,6 @@ import {NavigationService} from './services';
 })
 export class CoreModule {
   static forRoot(config?: {}): ModuleWithProviders {
-
     return {
       ngModule: CoreModule,
       providers: [

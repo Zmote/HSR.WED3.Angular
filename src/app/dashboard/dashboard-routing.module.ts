@@ -9,7 +9,7 @@ const appRoutes: Routes = [
     component: DashboardComponent, // TODO: Add initial router outlet dashboard component...
     children: [
       {path: '', component: HomeComponent},
-      {path: 'transactions', component: TransactionComponent}
+      {path: 'transactions', component: TransactionComponent, data: {withFiltering: true}}
     ]
   }
 ];
@@ -22,5 +22,5 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class DashbaordRoutingModule {
+export class DashboardRoutingModule {
 }
