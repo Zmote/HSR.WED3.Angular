@@ -33,6 +33,7 @@ export class PaymentComponent implements OnInit {
       });
     } else {
       console.log('Form is not valid');
+      console.log(paymentForm);
     }
   }
 

@@ -38,6 +38,7 @@ mat-form-field{
 }
 
 .example-header {
+  display:flex;
   min-height: 64px;
   padding: 8px 24px 0;
 }
@@ -46,6 +47,15 @@ mat-form-field{
   font-size: 14px;
   width: 100%;
 }
+
+.example-header-item{
+  flex-grow:1;
+}
+
+.margin-left{
+  margin-left:16px;
+}
+
 
 mat-table{
   overflow:auto;

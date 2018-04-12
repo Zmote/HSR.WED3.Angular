@@ -2,8 +2,15 @@
   <mat-toolbar color="primary">{{title}}</mat-toolbar>
   <mat-card-content>
     <div *ngIf="withFiltering" class="example-header">
-      <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      <mat-form-field class="example-header-item">
+        <mat-select placeholder="Month" [(value)]="selectedMonth" (change)="applyFilter()">
+          <mat-option *ngFor="let month of getMonths()" [value]="'0' + month.toString()">{{getMonthName(month)}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-header-item margin-left">
+        <mat-select placeholder="Year" [(value)]="selectedYear" (change)="applyFilter()">
+          <mat-option *ngFor="let year of getYears()" [value]="year">{{year}}</mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
 
@@ -14,7 +21,7 @@
         <!-- Date Column -->
         <ng-container matColumnDef="date">
           <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+          <mat-cell *matCellDef="let element"> {{formatDate(element.date)}} </mat-cell>
         </ng-container>
 
         <!-- From Column -->
@@ -46,8 +53,9 @@
       </mat-table>
 
       <mat-paginator
-        [pageSize]="10"
-        [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[3, 5, 10, 25, 100]">
+      </mat-paginator>
     </div>
     <a *ngIf="withRedirectButton" mat-raised-button color="accent" class="loginButton" routerLink="transactions">All Transactions</a>
   </mat-card-content>

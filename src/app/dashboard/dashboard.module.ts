@@ -6,7 +6,8 @@ import {DashboardRoutingModule} from './dashboard-routing.module';
 import {PaymentComponent, TransactionComponent, HomeComponent} from './components';
 import {DashboardComponent} from './dashboard.component';
 import {
-  MatButtonModule, MatCardModule, MatFormFieldModule, MatGridListModule, MatInputModule, MatPaginatorModule, MatTableModule,
+  MatButtonModule, MatCardModule, MatFormFieldModule, MatGridListModule, MatInputModule, MatPaginatorModule, MatSelectModule,
+  MatTableModule,
   MatToolbarModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -41,7 +42,8 @@ const EXPORTS = [
     MatButtonModule,
     MatGridListModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSelectModule
   ],
   exports: EXPORTS,
   providers: [

@@ -9,7 +9,7 @@ const appRoutes: Routes = [
     component: DashboardComponent, // TODO: Add initial router outlet dashboard component...
     children: [
       {path: '', component: HomeComponent},
-      {path: 'transactions', component: TransactionComponent, data: {withFiltering: true}}
+      {path: 'transactions', component: TransactionComponent, data: {withFiltering: true, transactionsCount: 1000000, pageSize: 10}}
     ]
   }
 ];

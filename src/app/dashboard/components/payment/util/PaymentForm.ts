@@ -7,6 +7,9 @@ export class PaymentForm extends FormGroup {
   private static opts = {
     common: {
       minLength: 3
+    },
+    payment: {
+      min: 1
     }
   };
 
@@ -21,7 +24,7 @@ export class PaymentForm extends FormGroup {
       amount: new FormControl('', {
         validators: [
           Validators.required,
-          Validators.minLength(PaymentForm.opts.common.minLength)
+          Validators.min(PaymentForm.opts.payment.min)
         ]
       })
     });

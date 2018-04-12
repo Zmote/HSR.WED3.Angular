@@ -1,5 +1,5 @@
 <!-- Not using mat-grid-list, it's too buggy for this scenario here-->
 <div class="grid-flex-parent">
   <wed-payment></wed-payment>
-  <wed-transaction wedWithRedirectButton [title]="'Recent Transactions'"></wed-transaction>
+  <wed-transaction wedWithRedirectButton [title]="'Recent Transactions'" [transactionsCount]="30" [pageSize]="3"></wed-transaction>
 </div>
