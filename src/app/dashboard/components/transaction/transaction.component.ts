@@ -3,8 +3,7 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {QueryInfo, TransactionInfo} from '../../models';
 import {TransactionService} from '../../services';
 import {ActivatedRoute} from '@angular/router';
-import Moment from 'moment';
-import moment = require('moment');
+import * as moment from 'moment';
 
 @Component({
   selector: 'wed-transaction',
@@ -25,11 +24,10 @@ export class TransactionComponent implements OnInit, AfterViewInit {
   @Input() transactionsCount = 3;
   @Input() pageSize = 3;
 
-  selectedMonth = '0';
-  selectedYear = '0';
+  selectedMonth = moment().format('MM');
+  selectedYear = moment().format('YYYY');
 
-  constructor(private transactionService: TransactionService, private route: ActivatedRoute) {
-  }
+  constructor(private transactionService: TransactionService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.data.subscribe((value) => {
@@ -44,16 +42,16 @@ export class TransactionComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-  }
-
-  applyFilter() {
-    // a combined term to trigger the filter, needs to be at least 3 characters long to be triggered
-    this.dataSource.filter = '000' + this.selectedMonth + this.selectedYear;
     this.dataSource.filterPredicate = ((data, filter) => {
       const year = moment(data.date).format('YYYY');
       const month = moment(data.date).format('MM');
       return year === this.selectedYear && month === this.selectedMonth;
     });
+  }
+
+  applyFilter() {
+    // a combined term to trigger the filter, needs to be at least 3 characters long to be triggered
+    this.dataSource.filter = '0' + this.selectedMonth + this.selectedYear;
   }
 
   getTransactions() {

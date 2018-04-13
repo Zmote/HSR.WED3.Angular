@@ -9,7 +9,7 @@
       </mat-form-field>
       <mat-form-field class="example-header-item margin-left">
         <mat-select placeholder="Year" [(value)]="selectedYear" (change)="applyFilter()">
-          <mat-option *ngFor="let year of getYears()" [value]="year">{{year}}</mat-option>
+          <mat-option *ngFor="let year of getYears()" [value]="year.toString()">{{year.toString()}}</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
