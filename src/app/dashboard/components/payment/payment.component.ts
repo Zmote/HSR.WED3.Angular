@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import PaymentForm from './util/PaymentForm';
 import {AccountDetailInfo, PaymentInfo} from '../../models';
 import {TransactionService} from '../../services';
@@ -9,6 +9,8 @@ import {TransactionService} from '../../services';
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
+
+  @Output() paymentExecuted = new EventEmitter<PaymentInfo>();
 
   public paymentForm: PaymentForm = new PaymentForm();
   // could be probably optimized?
@@ -26,9 +28,9 @@ export class PaymentComponent implements OnInit {
     if (paymentForm && paymentForm.valid) {
       this.transactionService.transfer(PaymentInfo.fromDto(paymentForm.value)).subscribe((response) => {
         if (response) {
-          // change/navigate to payment completed view
           this.getAccountDetails();
           this.transactionService.change.emit();
+          this.paymentExecuted.emit(PaymentInfo.fromDto(response));
         }
       });
     } else {

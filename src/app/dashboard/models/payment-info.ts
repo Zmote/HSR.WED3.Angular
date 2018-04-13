@@ -1,16 +1,16 @@
 import {AccountNr} from './types/type-definitions';
 
 export class PaymentInfo {
-  constructor(private targetAccountNr: AccountNr, private amount: number) {
+  constructor(public target: AccountNr, public amount: number, public total: number) {
   }
 
   public static fromDto(data: any): PaymentInfo {
-    return new PaymentInfo(data.to, data.amount);
+    return new PaymentInfo(data.target, data.amount, data.total);
   }
 
   toDto(): any {
     return {
-      target: this.targetAccountNr,
+      target: this.target,
       amount: this.amount
     };
   }

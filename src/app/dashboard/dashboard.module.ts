@@ -14,9 +14,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {WithFilteringDirective, WithRedirectButtonDirective} from './components/transaction/directives';
 import {TransactionService} from './services';
+import {PaymentConfirmedComponent} from './components/payment-confirmed/payment-confirmed.component';
+import {AbsoluteNumberPipe} from './pipes';
 
 const EXPORTED_DECLARATIONS = [
-  DashboardComponent, PaymentComponent, TransactionComponent, HomeComponent, WithFilteringDirective, WithRedirectButtonDirective
+  DashboardComponent, PaymentComponent, PaymentConfirmedComponent, TransactionComponent, HomeComponent, WithFilteringDirective,
+  WithRedirectButtonDirective, AbsoluteNumberPipe,
 ];
 const INTERNAL_DECLARATIONS = [
   ...EXPORTED_DECLARATIONS

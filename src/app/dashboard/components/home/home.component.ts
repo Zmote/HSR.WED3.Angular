@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
+import {PaymentInfo} from '../../models';
 
 @Component({
   selector: 'wed-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
+  public newPaymentActive = true;
+  public lastPayment: PaymentInfo = null;
 
-  ngOnInit() {
+  onPaymentExecuted($event: PaymentInfo) {
+    this.lastPayment = $event;
+    this.newPaymentActive = false;
   }
 
+  onPaymentConfirmed() {
+    this.newPaymentActive = true;
+  }
 }

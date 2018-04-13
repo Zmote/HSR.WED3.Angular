@@ -52,6 +52,14 @@ mat-form-field{
   flex-grow:1;
 }
 
+// special override with ::ng-deep of existing material UI element
+// material ui's form-field is fixed on width:180px, which can cause
+// issues on mobile screens
+// this could be used in other places as well make the application truly responsive
+:host ::ng-deep .mat-form-field-infix{
+  width:auto;
+}
+
 .margin-left{
   margin-left:16px;
 }
@@ -62,7 +70,9 @@ mat-table{
   // Because of available paging
   max-height: 550px;
 }
-
+// Be aware that this kind of import makes it impossible to share this component or module separately
+// i.e. to global styles.scss has to be available, if you want it to be shareable on its own
+// use a fix value or a special scss function to determine if styles.scss available and if not, use a default value
 @import '../../../../styles';
 .mat-header-row {
   position: sticky;

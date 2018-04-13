@@ -1,0 +1,13 @@
+<mat-card class="mat-elevation-z4">
+  <mat-toolbar color="primary">New Payment</mat-toolbar>
+  <mat-card-content>
+    <p>
+      Your payment of {{lastPayment.amount | absoluteNumber}} CHF was successfully transfered to the Account with Number {{lastPayment.target}}.
+    </p>
+    <p>
+      New Balance: {{lastPayment.total}}
+    </p>
+    <!-- Pay Button -->
+    <button mat-raised-button color="accent" class="newPaymentButton" (click)="doConfirm()">New Payment</button>
+  </mat-card-content>
+</mat-card>

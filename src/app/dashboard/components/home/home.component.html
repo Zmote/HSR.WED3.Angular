@@ -1,5 +1,6 @@
 <!-- Not using mat-grid-list, it's too buggy for this scenario here-->
 <div class="grid-flex-parent">
-  <wed-payment></wed-payment>
+  <wed-payment *ngIf="newPaymentActive" (paymentExecuted)="onPaymentExecuted($event)"></wed-payment>
+  <wed-payment-confirmed *ngIf="!newPaymentActive" (paymentConfirmed)="onPaymentConfirmed()" [lastPayment]="lastPayment"></wed-payment-confirmed>
   <wed-transaction wedWithRedirectButton [title]="'Recent Transactions'" [transactionsCount]="30" [pageSize]="3"></wed-transaction>
 </div>

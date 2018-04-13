@@ -15,7 +15,7 @@ export class PaymentForm extends FormGroup {
 
   constructor() {
     super({
-      to: new FormControl('', {
+      target: new FormControl('', {
         validators: [
           Validators.required,
           Validators.minLength(PaymentForm.opts.common.minLength)
