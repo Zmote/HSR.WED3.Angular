@@ -11,7 +11,7 @@ export class NavigationService {
   // TODO: add other routing targets, if needed
 
   public goToHome(): void {
-    this.goToUrl('/'); // TODO: adjust routing according this URL
+    this.goToUrl('/welcome'); // TODO: adjust routing according this URL
   }
 
   public goToDashboard(): void {

@@ -2,7 +2,7 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 
 import {SharedModule} from '../shared/shared.module';
 
-import {DashbaordRoutingModule} from './dashboard-routing.module';
+import {DashboardRoutingModule} from './dashboard-routing.module';
 import {PaymentComponent, TransactionComponent, HomeComponent} from './components';
 import {DashboardComponent} from './dashboard.component';
 import {
@@ -34,7 +34,7 @@ const EXPORTS = [
     FormsModule, // --> one of these is superfluous, or should be
     SharedModule,
     CommonModule,
-    DashbaordRoutingModule,
+    DashboardRoutingModule,
     MatInputModule,
     MatCardModule,
     MatToolbarModule,
@@ -53,13 +53,5 @@ const EXPORTS = [
   ]
 })
 export class DashboardModule {
-  static forRoot(config?: {}): ModuleWithProviders {
-    return {
-      ngModule: DashboardModule,
-      providers: [
-        TransactionService
-      ]
-    };
-  }
 
 }

@@ -16,6 +16,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule, MatButtonModule, MatMenuModule, MatIconModule} from '@angular/material';
 import {MatDividerModule} from '@angular/material/divider';
 import {DashboardModule} from './dashboard/dashboard.module';
+import {DashboardGuard} from './auth/services/dashboard-guard.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,6 @@ import {DashboardModule} from './dashboard/dashboard.module';
     CoreModule.forRoot(),
     AuthModule.forRoot(),
     WelcomeModule.forRoot(),
-    DashboardModule.forRoot(),
     BrowserAnimationsModule,
     MatToolbarModule,
     MatMenuModule,
