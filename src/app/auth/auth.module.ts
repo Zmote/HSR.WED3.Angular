@@ -18,6 +18,7 @@ import {
 // CommonModule contains all the common directives etc. for Angualr, so... yes, it's kinda essential
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
+import {DashboardGuard} from './services/dashboard-guard.service';
 
 const EXPORTED_DECLARATIONS = [
   LoginComponent, LogoutComponent, RegisterComponent
@@ -57,6 +58,7 @@ export class AuthModule {
         // DI Providers (Services, Tokens, Factories...) to be used globally and instantiate only once
 
         // TODO: Add services/guards/... here, if additional classes are placed within the Auth moduley
+        DashboardGuard,
         AuthService,
         SecurityTokenStore,
         {

@@ -56,14 +56,7 @@ const EXPORTS = [
     TransactionService
   ]
 })
+
 export class DashboardModule {
-  static forRoot(config?: {}): ModuleWithProviders {
-    return {
-      ngModule: DashboardModule,
-      providers: [
-        TransactionService
-      ]
-    };
-  }
 
 }
