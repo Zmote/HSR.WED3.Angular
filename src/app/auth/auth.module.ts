@@ -11,8 +11,8 @@ import {
 } from './components';
 import {SharedModule} from '../shared/shared.module';
 import {
-  MatButtonModule, MatCardModule, MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule, MatMenuModule,
-  MatToolbarModule
+  MatButtonModule, MatCardModule, MatFormFieldModule, MatGridListModule,
+  MatIconModule, MatInputModule, MatMenuModule, MatProgressSpinnerModule, MatSnackBar, MatSnackBarModule, MatToolbarModule
 } from '@angular/material';
 
 // CommonModule contains all the common directives etc. for Angualr, so... yes, it's kinda essential
@@ -45,10 +45,12 @@ const EXPORTS = [
     MatGridListModule,
     MatIconModule,
     MatMenuModule,
-    RouterModule
+    RouterModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   exports: EXPORTS,
-  providers: [ AuthResourceService ]
+  providers: [AuthResourceService]
 })
 export class AuthModule {
   static forRoot(config?: {}): ModuleWithProviders {
@@ -65,7 +67,8 @@ export class AuthModule {
           provide: HTTP_INTERCEPTORS,
           useClass: TokenInterceptor,
           multi: true
-        }]
+        }
+      ]
     };
   }
 }

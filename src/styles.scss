@@ -88,3 +88,16 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
     transform: rotate(360deg);
   }
 }
+
+.error-snackbar{
+  background-color:red;
+}
+
+.error-snackbar button{
+  color:white;
+  font-weight:bold;
+}
+
+.success-snackbar{
+  background-color:green;
+}
