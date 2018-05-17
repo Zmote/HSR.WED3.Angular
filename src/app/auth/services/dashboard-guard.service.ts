@@ -23,7 +23,6 @@ export class DashboardGuard implements CanLoad, CanActivate {
       this.navService.goToHome();
       return false;
     } else {
-      this.navService.goToDashboard();
       return true;
     }
   }
