@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {PageNotFoundComponent} from './components/pagenotfound/pagenotfound.component';
+import {PageNotFoundComponent} from './components';
 import {MatButtonModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
 
