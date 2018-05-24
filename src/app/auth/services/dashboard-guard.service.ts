@@ -10,11 +10,7 @@ export class DashboardGuard implements CanLoad, CanActivate {
   constructor(private authService: AuthService, private navService: NavigationService) { }
 
   canActivate(route: ActivatedRouteSnapshot): boolean  {
-    if (!this.authService.hasCredentials) {
-      return false;
-    } else {
-      return true;
-    }
+    return this.authService.hasCredentials;
 
   }
 
