@@ -6,7 +6,7 @@
       </button>
       <mat-menu #menu="matMenu">
         <!--Some of these should be enabled/disabled depending on authentication-->
-        <a mat-menu-item routerLink="welcome" routerLinkActive="active-link-item" [routerLinkActiveOptions]="{exact:true}">
+        <a *ngIf="!authService.hasCredentials" mat-menu-item routerLink="welcome" routerLinkActive="active-link-item" [routerLinkActiveOptions]="{exact:true}">
           <mat-icon>home</mat-icon>
           <span>Home</span>
         </a>
@@ -30,7 +30,7 @@
   </div>
   <div class="visible-menu">
     <!--Some of these should be enabled/disabled depending on authentication-->
-    <a mat-button routerLink="welcome" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+    <a *ngIf="!authService.hasCredentials" mat-button routerLink="welcome" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
       <mat-icon>home</mat-icon>
       <span>Home</span>
     </a>
